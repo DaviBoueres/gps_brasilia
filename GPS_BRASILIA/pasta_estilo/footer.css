@@ -1,0 +1,143 @@
+/* Importação de Ícones (FontAwesome para redes sociais) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+:root {
+  --color-footer-bg: #0D1B3D;      /* Azul escuro profundo */
+  --color-footer-text: #E0E6ED;    /* Texto claro com bom contraste */
+  --color-footer-muted: #8CA0BA;   /* Texto secundário/links */
+  --color-teal-vibrant: #00BFA6;   /* Verde-água para hover */
+}
+
+/* Estrutura do Rodapé */
+.site-footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: 60px 80px 20px 80px;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+/* Coluna da Marca */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footer-logo img {
+  height: 36px;
+  width: auto;
+}
+
+.footer-logo h3 {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin: 0;
+}
+
+.footer-desc {
+  color: var(--color-footer-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  max-width: 300px;
+  margin-bottom: 24px;
+}
+
+/* Redes Sociais */
+.footer-socials {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-socials a {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-socials a:hover {
+  color: var(--color-teal-vibrant);
+  transform: translateY(-2px);
+}
+
+/* Colunas de Links e Títulos */
+.footer-col h4 {
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: var(--color-footer-muted);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--color-teal-vibrant);
+}
+
+/* Coluna de Contato */
+.footer-info {
+  color: var(--color-footer-muted);
+  font-size: 0.85rem;
+  margin: 0 0 12px 0;
+}
+
+/* Linha de Copyright (Footer Bottom) */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+.footer-bottom p {
+  color: var(--color-footer-muted);
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+/* Responsividade para Celulares e Tablets */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 40px 24px 20px 24px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
