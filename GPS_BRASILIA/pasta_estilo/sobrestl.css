@@ -57,3 +57,129 @@
 .header-nav nav a:hover::after {
   transform: scaleX(1);
   }
+.sec-sobre{
+  display: grid;
+}
+:root {
+  --color-primary-dark: #0D1B3D;
+  --color-blue-vibrant: #1556C0;
+  --color-bg-light: #F8F9FA;
+  --color-text-body: #4A5568;
+  --color-border: #E2E8F0;
+  --font-main: 'Poppins', sans-serif;
+}
+
+/* Container Principal */
+.sobre-section {
+  background-color: var(--color-bg-light);
+  padding: 80px 80px 60px 80px;
+  font-family: var(--font-main);
+  box-sizing: border-box;
+}
+
+.sobre-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Layout Superior (Texto + Imagem) */
+.sobre-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+/* Tag Numérica da Seção */
+.section-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-blue-vibrant);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+/* Título */
+.sobre-text h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+  margin: 0 0 24px 0;
+}
+
+/* Parágrafos */
+.sobre-text p {
+  font-size: 0.95rem;
+  color: var(--color-text-body);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* Imagem com Cantos Arredondados */
+.sobre-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  
+}
+
+/* Barra de Estatísticas */
+.sobre-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  background-color: #FFFFFF;
+  padding: 30px 40px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #718096;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .sobre-section {
+    padding: 50px 24px;
+  }
+
+  .sobre-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sobre-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .sobre-stats {
+    grid-template-columns: 1fr;
+  }
+}
