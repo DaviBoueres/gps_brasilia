@@ -1,0 +1,184 @@
+body{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/Gemini_Generated_Image_9h5s1y9h5s1y9h5s.png');
+}
+.header-inicio{
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+}
+.logo-header{
+  display: flex;
+  align-items: center;
+}
+.nome-logo{
+  color: white;
+}
+.logo-header img{
+  width: 80px;
+  height: 80px;
+}
+.header-nav nav {
+  display: flex;
+  align-items: center;         /* Alinha os itens verticalmente ao centro */
+  justify-content: flex-end;   /* Empurra os itens para a direita (opcional) */
+  gap: 20px;                   /* Cria um espaçamento uniforme entre os links */
+  padding-right: 100px;
+}
+.header-nav nav ul{
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+.header-nav nav ul li a{
+  color: (--color-bg-light);
+}
+
+.header-nav nav a {
+  position: relative;
+  color: var(--color-bg-light);
+  text-decoration: none;
+  padding-bottom: 4px; /* Espaço entre o texto e a linha */
+  transition: color 0.3s ease;
+}
+
+/* Criação da linha (invisível por padrão devido ao scaleX(0)) */
+.header-nav nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-bg-white, #ffffff); /* Cor da linha */
+  transform: scaleX(0);
+  transform-origin: left; /* Garante que a animação comece no início (esquerda) */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Estado Hover: expande a linha até o final (100%) */
+.header-nav nav a:hover::after {
+  transform: scaleX(1);
+}
+/* Importação da fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-primary-dark: #0D1B3D; /* Azul marinho escuro */
+  --color-blue-vibrant: #1556C0; /* Azul das palavras/botão */
+  --color-teal-vibrant: #00BFA6; /* Verde-água/Teal */
+  --color-text-muted: #555555;
+  --font-main: 'Poppins', sans-serif;
+}
+
+/* Seção Principal (Hero) */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 80px;
+  background-image: url('caminho/para/imagem-catedral.jpg'); /* Adicione sua imagem aqui */
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+  background: transparent;
+}
+
+/* Bloco de Conteúdo (Lado Esquerdo) */
+.hero-content {
+  max-width: 480px;
+}
+
+/* Títulos */
+.hero-titulo h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.hero-titulo h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* Destaque das palavras (Cores da paleta) */
+.hero-titulo .highlight-blue {
+  color: var(--color-blue-vibrant);
+}
+
+.hero-titulo .highlight-teal {
+  color: var(--color-teal-vibrant);
+}
+
+/* Parágrafo Descritivo */
+.hero-inicio p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 24px 0 32px 0;
+  line-height: 1.6;
+}
+
+/* Grupo de Botões/Links */
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Botão Azul "EXPLORAR" */
+.btn-explorar {
+  background-color: var(--color-blue-vibrant);
+  color: #FFFFFF;
+  padding: 12px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  display: inline-block;
+}
+
+.btn-explorar:hover {
+  background-color: #0e439b;
+  transform: translateY(-1px);
+}
+
+/* Link "SAIBA MAIS" */
+.btn-saiba-mais {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.btn-saiba-mais:hover {
+  color: var(--color-blue-vibrant);
+}
+
+/* Responsividade Básica para Celulares */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 24px;
+    background-position: center;
+  }
+
+  .hero-titulo h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-titulo h2 {
+    font-size: 2rem;
+  }
+}
