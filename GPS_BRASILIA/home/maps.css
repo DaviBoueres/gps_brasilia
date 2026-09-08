@@ -24,7 +24,7 @@ body {
 .container h1 {
     font-size: 36px;
     margin-bottom: 30px;
-    color: #222;
+    color:  #1170ff;
 }
 
 /* MAPA */
@@ -47,7 +47,7 @@ body {
 .container p {
     font-size: 20px;
     margin: 25px 20px;
-    color: #555;
+    color: #1a3358;
 }
 
 /* BOTÃO */
@@ -56,7 +56,7 @@ body {
     display: inline-block;
     padding: 15px 40px;
 
-    background: #222;
+    background: #8ebbff;
     color: white;
 
     text-decoration: none;
@@ -70,5 +70,5 @@ body {
 
 .botao:hover {
     transform: scale(1.05);
-    background: #444;
+    background:  #8ebbff;
 }
