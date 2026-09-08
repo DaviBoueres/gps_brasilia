@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.container h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color:  #1170ff;
+}
+
+/* MAPA */
+
+.mapa {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* TEXTO */
+
+.container p {
+    font-size: 20px;
+    margin: 25px 20px;
+    color: #1a3358;
+}
+
+/* BOTÃO */
+
+.botao {
+    display: inline-block;
+    padding: 15px 40px;
+
+    background: #8ebbff;
+    color: white;
+
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    transform: scale(1.05);
+    background:  #8ebbff;
+}
