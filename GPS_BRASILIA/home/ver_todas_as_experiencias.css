@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #F1F3F5;
+    background-color: #ffffff;
     color: #0D183D;
 }
 
@@ -26,6 +26,7 @@ body {
 .header-inicio{
   display: flex;
   height: 100px;
+  color: #0D183D;
   justify-content: space-between;
 }
 .logo-header{
@@ -223,7 +224,7 @@ main {
 ================================ */
 
 .card {
-    background-color: #FFFFFF;
+    background-color:#C7C7C7;
     border: 1px solid #E4E7EA;
     overflow: hidden;
     transition: all 0.3s ease;
