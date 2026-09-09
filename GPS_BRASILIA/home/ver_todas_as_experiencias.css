@@ -1,0 +1,520 @@
+/* ================================
+   CONFIGURAÇÕES GERAIS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F1F3F5;
+    color: #0D183D;
+}
+
+
+/* ================================
+   MENU / HEADER
+================================ */
+
+.header-inicio{
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+}
+.logo-header{
+  display: flex;
+  align-items: center;
+}
+.nome-logo{
+  color: white;
+}
+.logo-header img{
+  width: 80px;
+  height: 80px;
+}
+.header-nav nav {
+  display: flex;
+  align-items: center;         /* Alinha os itens verticalmente ao centro */
+  justify-content: flex-end;   /* Empurra os itens para a direita (opcional) */
+  gap: 20px;                   /* Cria um espaçamento uniforme entre os links */
+  padding-right: 100px;
+}
+.header-nav nav ul{
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+.header-nav nav ul li a{
+  color: (--color-bg-light);
+}
+
+.header-nav nav a {
+  position: relative;
+  color: var(--color-bg-light);
+  text-decoration: none;
+  padding-bottom: 4px; /* Espaço entre o texto e a linha */
+  transition: color 0.3s ease;
+}
+
+/* Criação da linha (invisível por padrão devido ao scaleX(0)) */
+.header-nav nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-bg-white, #ffffff); /* Cor da linha */
+  transform: scaleX(0);
+  transform-origin: left; /* Garante que a animação comece no início (esquerda) */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Estado Hover: expande a linha até o final (100%) */
+.header-nav nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ITEM ATIVO */
+
+nav a.ativo {
+    color: #008FA6;
+}
+
+nav a.ativo::after {
+    width: 100%;
+}
+
+/* ================================
+   CONTEÚDO PRINCIPAL
+================================ */
+
+main {
+    width: 86%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 45px 0 80px;
+    position: relative;
+}
+
+/* ================================
+   BOTÃO VOLTAR
+================================ */
+
+.voltar {
+    display: inline-block;
+    text-decoration: none;
+    color: #0D183D;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 45px;
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    color: #008FA6;
+    transform: translateX(-4px);
+}
+
+/* ================================
+   TÍTULO
+================================ */
+
+.titulo {
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+/* PEQUENO TÍTULO */
+
+.subtitulo {
+    color: #00AFA0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+
+/* TÍTULO PRINCIPAL */
+
+.titulo h1 {
+    font-size: 43px;
+    line-height: 1.1;
+    font-weight: 400;
+    color: #0D183D;
+    margin-bottom: 18px;
+}
+
+.titulo h1 span {
+    color: #1556C0;
+    font-weight: 600;
+}
+
+/* TEXTO */
+
+.titulo > p:last-child {
+    color: #5F6575;
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+/* ================================
+   FILTROS
+================================ */
+
+.filtros {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #D9DDE2;
+}
+
+.filtro {
+    border: 1px solid #D1D5DA;
+    background-color: #FFFFFF;
+    color: #0D183D;
+    padding: 11px 20px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.filtro:hover {
+    background-color: #008FA6;
+    color: #FFFFFF;
+    border-color: #008FA6;
+}
+
+/* FILTRO SELECIONADO */
+
+.filtro.ativo {
+    background-color: #1556C0;
+    border-color: #1556C0;
+    color: #FFFFFF;
+}
+
+/* ================================
+   ÁREA DAS EXPERIÊNCIAS
+================================ */
+
+.experiencias {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* ================================
+   CARD
+================================ */
+
+.card {
+    background-color: #FFFFFF;
+    border: 1px solid #E4E7EA;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(13, 24, 61, 0.06);
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(13, 24, 61, 0.12);
+}
+
+/* ================================
+   IMAGEM DOS CARDS
+================================ */
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* ZOOM NA IMAGEM */
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+/* ================================
+   CONTEÚDO DO CARD
+================================ */
+
+.card-conteudo {
+    padding: 23px;
+}
+
+/* CATEGORIA */
+
+.categoria {
+    color: #00AFA0;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+/* TÍTULO DO CARD */
+
+.card h2 {
+    color: #0D183D;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+/* DESCRIÇÃO */
+
+.card-conteudo > p:not(.categoria) {
+    color: #656B78;
+    font-size: 12px;
+    line-height: 1.7;
+    min-height: 60px;
+}
+
+
+/* LINK DO CARD */
+
+.card a {
+    display: inline-block;
+    margin-top: 18px;
+    text-decoration: none;
+    color: #1556C0;
+    font-size: 10px;
+    font-weight : 600;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    color: #00AFA0;
+    transform: translateX(4px);
+}
+
+/* ================================
+   BOTÃO CARREGAR MAIS
+================================ */
+
+.carregar {
+    display: block;
+    margin: 45px auto 0;
+    padding: 14px 32px;
+    border: none;
+    background-color: #1556C0;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carregar:hover {
+    background-color: #008FA6;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 143, 166, 0.25);
+}
+
+/* ================================
+   RODAPÉ
+================================ */
+
+footer {
+    width: 100%;
+    background-color: #0D183D;
+    color: #FFFFFF;
+    padding: 55px 8% 45px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    border-top: 4px solid #00AFA0;
+}
+
+/* PRIMEIRA COLUNA */
+
+footer h2 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+
+footer p {
+    color: #C7CBD5;
+    font-size: 12px;
+}
+
+
+/* TÍTULOS */
+
+footer h3 {
+    color: #00BFA6;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+/* LINKS */
+
+footer a {
+    display: block;
+    color: #D5D9E0;
+    text-decoration: none;
+    font-size: 11px;
+    margin-bottom: 11px;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #00BFA6;
+    transform: translateX(4px);
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1000px) {
+
+    header {
+        padding: 0 5%;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    .experiencias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ================================
+   CELULAR
+================================ */
+
+@media (max-width: 700px) {
+
+    header {
+        height: auto;
+        padding: 20px 5%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+    main {
+        width: 90%;
+        padding-top: 30px;
+    }
+
+    .voltar {
+        margin-bottom: 30px;
+    }
+
+
+    .titulo h1 {
+        font-size: 32px;
+    }
+
+    .titulo > p:last-child {
+        font-size: 13px;
+    }
+
+    .filtros {
+        gap: 7px;
+    }
+
+    .filtro {
+        padding: 9px 13px;
+        font-size: 10px;
+    }
+
+    .experiencias {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card img {
+        height: 220px;
+    }
+
+
+    footer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 45px 8%;
+    }
+}
+
+/* ================================
+   CELULAR PEQUENO
+================================ */
+
+@media (max-width: 400px) {
+
+    .logo h2 {
+        font-size: 24px;
+    }
+
+
+    nav {
+        gap: 10px;
+    }
+
+
+    .titulo h1 {
+        font-size: 28px;
+    }
+
+
+    .card-conteudo {
+        padding: 18px;
+    }
+
+
+    .card h2 {
+        font-size: 19px;
+    }
+
+}
