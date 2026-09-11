@@ -1,5 +1,5 @@
 body{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/Gemini_Generated_Image_9h5s1y9h5s1y9h5s.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/Imagem-paginap.png');
 }
 .header-inicio{
   display: flex;
@@ -78,7 +78,7 @@ body{
   display: flex;
   align-items: center;
   padding: 60px 80px;
-  background-image: url('caminho/para/imagem-catedral.jpg'); /* Adicione sua imagem aqui */
+  background-image: url('/assets/Imagem-paginap.png'); /* Adicione sua imagem aqui */
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
