@@ -1,0 +1,161 @@
+/* ==========================================================================
+   1. VARIÁVEIS DO SISTEMA (DESIGN TOKENS)
+   ========================================================================== */
+:root {
+  /* Paleta de Cores Principais */
+  --color-primary-dark: #0D1B3D;   /* Azul Marinho Escuro (Rodapé / Destaques) */
+  --color-primary: #1556C0;        /* Azul Vibrante (Botões / Links) */
+  --color-secondary: #00BFA6;      /* Verde Água / Teal (Acentos) */
+  --color-accent: #FFC107;         /* Amarelo Ouro (Destaques secundários) */
+
+  /* Cores Neutras e de Fundo */
+  --color-bg-light: #F1F3F5;       /* Cinza Claro (Fundos de seção) */
+  --color-bg-white: #FFFFFF;       /* Branco Puro */
+  --color-text-main: #0D1B3D;      /* Cor padrão para textos escuros */
+  --color-text-muted: #6C757D;     /* Textos secundários / subtítulos */
+
+  /* Tipografia (Poppins) */
+  --font-family-base: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Bordas e Sombras */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --shadow-sm: 0 2px 4px rgba(13, 27, 61, 0.05);
+  --shadow-md: 0 4px 12px rgba(13, 27, 61, 0.08);
+}
+
+/* ==========================================================================
+   2. ESTILOS BASE & TIPOGRAFIA
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-white);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #FFFFFF;
+  
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-dark);
+  margin-top: 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* ==========================================================================
+   3. COMPONENTES REUTILIZÁVEIS
+   ========================================================================== */
+
+/* Botão Principal */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-bg-white);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 12px 24px;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: #104397;
+  transform: translateY(-1px);
+}
+
+/* Botão Secundário / Contorno */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  padding: 10px 22px;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg-white);
+}
+
+/* Cards de Conteúdo / Experiências */
+.card {
+  background-color: var(--color-bg-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-bg-light);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+/* Badge / Tags */
+.badge {
+  background-color: var(--color-secondary);
+  color: var(--color-bg-white);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  padding: 4px 8px;
+  border-radius: var(--border-radius-sm);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   4. ESTRUTURA GERAL DA PÁGINA (LAYOUT)
+   ========================================================================== */
+
+/* Seção Hero / Destaque */
+.hero-section {
+  background-color: var(--color-bg-light);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Rodapé */
+.site-footer {
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg-white);
+  padding: 40px 20px 20px;
+}
+
+.site-footer a {
+  color: #B0C4DE;
+}
+
+.site-footer a:hover {
+  color: var(--color-secondary);
+}
+/*---------------------------------------------------------------------------------------------------*/
