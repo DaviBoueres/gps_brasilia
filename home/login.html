@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Cadastro - GPS Brasília</title>
+  <!-- Adicione o link para o seu arquivo CSS principal aqui -->
+  <link rel="stylesheet" href="/pasta_estilo/login.css">
+</head>
+<body class="auth-body">
+
+  <div class="auth-wrapper">
+    
+    <!-- Logo ou Título de Retorno -->
+    <div class="auth-logo">
+      <a href="index.html">
+        <img src="/assets/image-logo-removebg-preview.png" alt="GPS Brasília Logo" width="60">
+        <h2>GPS BRASÍLIA</h2>
+      </a>
+    </div>
+
+    <!-- Caixa Principal de Autenticação -->
+    <div class="auth-container">
+      
+      <!-- Abas de Navegação -->
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="showForm('login')">LOGIN</button>
+        <button class="auth-tab" onclick="showForm('cadastro')">CADASTRO</button>
+      </div>
+
+      <!-- Formulário de Login -->
+      <form id="form-login" class="auth-form active">
+        <div class="input-group">
+          <label for="login-email">E-mail</label>
+          <input type="email" id="login-email" placeholder="seu@email.com" required>
+        </div>
+        
+        <div class="input-group">
+          <label for="login-senha">Senha</label>
+          <input type="password" id="login-senha" placeholder="••••••••" required>
+        </div>
+
+        <div class="auth-actions">
+          <label class="remember-me">
+            <input type="checkbox"> Lembrar de mim
+          </label>
+          <a href="#" class="forgot-password">Esqueceu a senha?</a>
+        </div>
+
+        <button type="submit" class="auth-btn">ENTRAR</button>
+      </form>
+
+      <!-- Formulário de Cadastro -->
+      <form id="form-cadastro" class="auth-form">
+        <div class="input-group">
+          <label for="cad-nome">Nome Completo</label>
+          <input type="text" id="cad-nome" placeholder="Seu nome" required>
+        </div>
+
+        <div class="input-group">
+          <label for="cad-email">E-mail</label>
+          <input type="email" id="cad-email" placeholder="seu@email.com" required>
+        </div>
+        
+        <div class="input-group">
+          <label for="cad-senha">Senha</label>
+          <input type="password" id="cad-senha" placeholder="Crie uma senha forte" required>
+        </div>
+
+        <button type="submit" class="auth-btn">CRIAR CONTA</button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Pequeno script para alternar entre as abas -->
+  <script>
+    function showForm(formType) {
+      // Remove classe 'active' de todos
+      document.querySelectorAll('.auth-form').forEach(form => form.classList.remove('active'));
+      document.querySelectorAll('.auth-tab').forEach(tab => tab.classList.remove('active'));
+      
+      // Adiciona classe 'active' no selecionado
+      document.getElementById('form-' + formType).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>

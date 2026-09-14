@@ -24,10 +24,26 @@ body {
 .container h1 {
     font-size: 36px;
     margin-bottom: 30px;
-    color:  #1170ff;
+    color: #283878;
 }
 
 /* MAPA */
+
+.voltar {
+    position: absolute;
+    top: 35px;
+    right: 80px;
+
+    color: #0D183D;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    
+    z-index: 10;
+}
+
 
 .mapa {
     width: 100%;
@@ -47,7 +63,7 @@ body {
 .container p {
     font-size: 20px;
     margin: 25px 20px;
-    color: #1a3358;
+    color: #000000;
 }
 
 /* BOTÃO */
@@ -56,7 +72,7 @@ body {
     display: inline-block;
     padding: 15px 40px;
 
-    background: #8ebbff;
+    background: #283878;
     color: white;
 
     text-decoration: none;
@@ -70,5 +86,5 @@ body {
 
 .botao:hover {
     transform: scale(1.05);
-    background:  #8ebbff;
+    background: #283878;
 }
