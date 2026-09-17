@@ -965,4 +965,545 @@ button {
     * {
         transition: none !important;
     }
+
+
+}
+/* ===================================
+   MODAL DE GASTRONOMIA
+=================================== */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Fundo escuro da sobreposição */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(13, 27, 61, 0.82);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+/* Modal aberto */
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Área branca do modal */
+
+.modal-container {
+    width: min(1200px, 100%);
+    max-height: calc(100vh - 48px);
+
+    padding: 45px;
+
+    background: #ffffff9c;
+
+    overflow-y: auto;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.32);
+
+    transform: translateY(25px) scale(0.98);
+
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0) scale(1);
+}
+
+/* ===================================
+   CABEÇALHO DO MODAL
+=================================== */
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+
+    margin-bottom: 32px;
+}
+
+.modal-eyebrow {
+    margin: 0 0 8px;
+
+    color: var(--blue);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.modal-header h2 {
+    margin: 0;
+
+    color: var(--navy);
+
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.modal-rule {
+    width: 55px;
+    height: 3px;
+
+    margin: 22px 0;
+
+    background: var(--teal);
+}
+
+.modal-description {
+    max-width: 600px;
+    margin: 0;
+
+    color: var(--blue);
+}
+
+/* Botão de fechar */
+
+.modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid #d8dce3;
+    border-radius: 50%;
+
+    color: var(--navy);
+    background: transparent;
+
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s,
+        background 0.2s,
+        border-color 0.2s,
+        transform 0.2s;
+}
+
+.modal-close:hover {
+    color: #ffffff;
+    background: var(--navy);
+    border-color: var(--navy);
+
+    transform: rotate(90deg);
+}
+
+/* ===================================
+   FILTROS
+=================================== */
+
+.modal-filters {
+    display: flex;
+    gap: 10px;
+
+    margin-bottom: 30px;
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid #d8dce3;
+
+    overflow-x: auto;
+}
+
+.filter-button {
+    flex-shrink: 0;
+
+    min-height: 40px;
+    padding: 0 18px;
+
+    border: 1px solid #cbd1da;
+
+    color: var(--navy);
+    background: #ffffff;
+
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s,
+        background 0.2s,
+        border-color 0.2s;
+}
+
+.filter-button:hover,
+.filter-button.active {
+    color: #ffffff;
+    background: var(--navy);
+    border-color: var(--navy);
+}
+
+/* ===================================
+   CARDS DE GASTRONOMIA
+=================================== */
+
+.gastronomia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.gastronomia-card {
+    background: #ffffff;
+
+    border: 1px solid #dfe3e9;
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+}
+
+.gastronomia-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 40px rgba(13, 27, 61, 0.14);
+}
+
+.gastronomia-image {
+    position: relative;
+
+    height: 215px;
+
+    overflow: hidden;
+}
+
+.gastronomia-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s;
+}
+
+.gastronomia-card:hover .gastronomia-image img {
+    transform: scale(1.05);
+}
+
+/* Categoria sobre a imagem */
+
+.place-category {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+
+    padding: 7px 11px;
+
+    color: #ffffff;
+    background: var(--navy);
+
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Botão de favorito */
+
+.favorite-button {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+    border-radius: 50%;
+
+    color: var(--navy);
+    background: rgba(255, 255, 255, 0.94);
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s,
+        background 0.2s,
+        transform 0.2s;
+}
+
+.favorite-button:hover,
+.favorite-button.selected {
+    color: #ffffff;
+    background: var(--teal);
+
+    transform: scale(1.06);
+}
+
+/* Conteúdo do card */
+
+.gastronomia-content {
+    padding: 23px;
+}
+
+.place-region {
+    margin: 0 0 6px;
+
+    color: var(--blue);
+
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.gastronomia-content h3 {
+    margin: 0 0 12px;
+
+    color: var(--navy);
+
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.gastronomia-content > p:not(.place-region) {
+    min-height: 73px;
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.86rem;
+    line-height: 1.6;
+}
+
+.place-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 20px;
+    padding-top: 17px;
+
+    border-top: 1px solid #e2e5e9;
+}
+
+.place-footer > span {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+.place-footer a {
+    color: var(--blue);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.place-footer a:hover {
+    color: var(--teal);
+}
+
+/* ===================================
+   FINAL DO MODAL
+=================================== */
+
+.modal-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    margin-top: 35px;
+    padding-top: 25px;
+
+    border-top: 1px solid #d8dce3;
+}
+
+.modal-bottom p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.modal-partner-link {
+    color: var(--blue);
+
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.modal-partner-link:hover {
+    color: var(--teal);
+}
+
+/* ===================================
+   MODAL EM TABLETS
+=================================== */
+
+@media (max-width: 900px) {
+
+    .gastronomia-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gastronomia-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+}
+
+/* ===================================
+   MODAL EM CELULARES
+=================================== */
+
+@media (max-width: 600px) {
+
+    .modal-overlay {
+        align-items: stretch;
+        padding: 0;
+    }
+
+    .modal-container {
+        width: 100%;
+        max-height: 100vh;
+
+        padding: 28px 20px;
+
+        box-shadow: none;
+    }
+
+    .modal-header {
+        gap: 18px;
+    }
+
+    .modal-header h2 {
+        font-size: 2.35rem;
+    }
+
+    .modal-description {
+        font-size: 0.9rem;
+    }
+
+    .modal-close {
+        width: 45px;
+        height: 45px;
+
+        font-size: 1.7rem;
+    }
+
+    .gastronomia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gastronomia-card:last-child {
+        grid-column: auto;
+    }
+
+    .gastronomia-image {
+        height: 210px;
+    }
+
+    .modal-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+/* CORREÇÃO DO CABEÇALHO E DA LOGO */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 90px;
+
+    padding: 0 5%;
+
+    background-color: #ffffff;
+
+    overflow: visible;
+}
+
+.site-header .brand {
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    max-width: 190px;
+
+    flex-shrink: 0;
+}
+
+.site-header .header-logo {
+    display: block;
+
+    width: 165px;
+    height: 72px;
+    max-width: 100%;
+    max-height: 72px;
+
+    object-fit: contain;
+    object-position: left center;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.main-nav a {
+    color: #0d1b3d;
+
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.brand-mark{
+    display: none !important;
 }

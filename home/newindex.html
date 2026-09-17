@@ -32,6 +32,129 @@
 
     <!-- CSS principal -->
     <link rel="stylesheet" href="/pasta_estilo/styles.css">
+
+    <style>
+
+    .gps-navbar {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        height: 90px;
+
+        padding: 0 5%;
+
+        background-color: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+
+        overflow: visible;
+    }
+
+    .gps-navbar-logo-link {
+        display: flex;
+        align-items: center;
+
+        width: 170px;
+        height: 80px;
+
+        margin: 0;
+        padding: 0;
+
+        flex-shrink: 0;
+    }
+
+    .gps-navbar-logo {
+        display: block !important;
+
+        width: 180px !important;
+        height: 76px !important;
+        max-width: 180px !important;
+        max-height: 76px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        object-fit: contain !important;
+        object-position: left center !important;
+    }
+
+    .gps-navbar-menu {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .gps-navbar-menu a {
+        color: #0d1b3d;
+
+        font-family: "Poppins", Arial, sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .gps-navbar-menu a:hover {
+        color: #00bfa8;
+    }
+
+    @media (max-width: 850px) {
+
+        .gps-navbar {
+            height: 72px;
+            padding: 0 20px;
+        }
+
+        .gps-navbar-logo-link {
+            width: 190px;
+            height: 80px;
+        }
+
+        .gps-navbar-logo {
+            width: 120px !important;
+            height: 55px !important;
+            max-width: 120px !important;
+            max-height: 55px !important;
+        }
+
+        .gps-navbar-menu {
+            position: absolute;
+            top: 72px;
+            right: 0;
+            left: 0;
+
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+
+            padding: 15px 20px;
+
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .gps-navbar-menu.open {
+            display: flex;
+        }
+
+        .gps-navbar-menu a {
+            width: 100%;
+            padding: 12px 0;
+        }
+
+    }
+
+</style>
 </head>
 
 <body>
@@ -46,10 +169,7 @@
         >
             <span class="brand-mark" aria-hidden="true">◇</span>
 
-            <span>
-                <strong>GPS</strong>
-                <small>BRASÍLIA</small>
-            </span>
+            <img class="header-logo" src="/assets/Inserir um título.png">
         </a>
 
         <!-- Botão exibido em celulares -->
@@ -218,7 +338,8 @@
 
             <div class="category-grid reveal">
 
-                <a href="#experiencias">
+                <a href="#"class="categoria card" id="abrir-gastronomia">
+
                     <b>♨</b>
                     <span>Gastronomia</span>
                 </a>
@@ -261,7 +382,258 @@
             </div>
 
         </section>
+        <!-- MODAL DE GASTRONOMIA -->
+<div
+    class="modal-overlay"
+    id="modal-gastronomia"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="titulo-gastronomia"
+    aria-hidden="true"
+>
+    <div
+        class="modal-container"
+        tabindex="-1"
+    >
 
+        <!-- Cabeçalho do modal -->
+        <header class="modal-header">
+
+            <div>
+                <p class="modal-eyebrow">
+                    Explore Brasília
+                </p>
+
+                <h2 id="titulo-gastronomia">
+                    Gastronomia
+                </h2>
+
+                <div class="modal-rule"></div>
+
+                <p class="modal-description">
+                    Descubra sabores, encontros e experiências
+                    gastronômicas em diferentes regiões de Brasília.
+                </p>
+            </div>
+
+            <button
+                class="modal-close"
+                id="fechar-gastronomia"
+                type="button"
+                aria-label="Fechar Gastronomia"
+            >
+                ×
+            </button>
+
+        </header>
+
+        <!-- Filtros ilustrativos -->
+        <div class="modal-filters">
+
+            <button type="button" class="filter-button active">
+                Todos
+            </button>
+
+            <button type="button" class="filter-button">
+                Restaurantes
+            </button>
+
+            <button type="button" class="filter-button">
+                Cafés
+            </button>
+
+            <button type="button" class="filter-button">
+                Bares
+            </button>
+
+            <button type="button" class="filter-button">
+                Comida regional
+            </button>
+
+        </div>
+
+        <!-- Lista de lugares -->
+        <div class="gastronomia-grid">
+
+            <!-- Primeiro lugar -->
+            <article class="gastronomia-card">
+
+                <div class="gastronomia-image">
+
+                    <img
+                        src="./assets/restaurante-1.jpg"
+                        alt="Restaurante em Brasília"
+                    >
+
+                    <button
+                        class="favorite-button"
+                        type="button"
+                        aria-label="Adicionar restaurante aos favoritos"
+                    >
+                        ♡
+                    </button>
+
+                    <span class="place-category">
+                        Restaurante
+                    </span>
+
+                </div>
+
+                <div class="gastronomia-content">
+
+                    <p class="place-region">
+                        Asa Sul
+                    </p>
+
+                    <h3>
+                        Sabores de Brasília
+                    </h3>
+
+                    <p>
+                        Cozinha brasileira contemporânea em um ambiente
+                        inspirado na arquitetura da capital.
+                    </p>
+
+                    <div class="place-footer">
+
+                        <span>$$</span>
+
+                        <a href="#mapa">
+                            Conhecer →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Segundo lugar -->
+            <article class="gastronomia-card">
+
+                <div class="gastronomia-image">
+
+                    <img
+                        src="./assets/restaurante-2.jpg"
+                        alt="Café localizado em Brasília"
+                    >
+
+                    <button
+                        class="favorite-button"
+                        type="button"
+                        aria-label="Adicionar café aos favoritos"
+                    >
+                        ♡
+                    </button>
+
+                    <span class="place-category">
+                        Café
+                    </span>
+
+                </div>
+
+                <div class="gastronomia-content">
+
+                    <p class="place-region">
+                        Asa Norte
+                    </p>
+
+                    <h3>
+                        Café do Cerrado
+                    </h3>
+
+                    <p>
+                        Cafés especiais, confeitaria artesanal e um espaço
+                        tranquilo para aproveitar a cidade.
+                    </p>
+
+                    <div class="place-footer">
+
+                        <span>$</span>
+
+                        <a href="#mapa">
+                            Conhecer →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Terceiro lugar -->
+            <article class="gastronomia-card">
+
+                <div class="gastronomia-image">
+
+                    <img
+                        src="./assets/restaurante-3.jpg"
+                        alt="Restaurante próximo ao Lago Paranoá"
+                    >
+
+                    <button
+                        class="favorite-button"
+                        type="button"
+                        aria-label="Adicionar restaurante aos favoritos"
+                    >
+                        ♡
+                    </button>
+
+                    <span class="place-category">
+                        Experiência
+                    </span>
+
+                </div>
+
+                <div class="gastronomia-content">
+
+                    <p class="place-region">
+                        Lago Sul
+                    </p>
+
+                    <h3>
+                        Mesa do Lago
+                    </h3>
+
+                    <p>
+                        Gastronomia, natureza e uma vista privilegiada
+                        para o pôr do sol no Lago Paranoá.
+                    </p>
+
+                    <div class="place-footer">
+
+                        <span>$$$</span>
+
+                        <a href="#mapa">
+                            Conhecer →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        <!-- Final do modal -->
+        <div class="modal-bottom">
+
+            <p>
+                Conhece outro lugar especial?
+            </p>
+
+            <a
+                href="mailto:contato@gpsbrasilia.com.br"
+                class="modal-partner-link"
+            >
+                Indique um lugar →
+            </a>
+
+        </div>
+
+    </div>
+</div>
         <!-- EXPERIÊNCIAS -->
         <section class="section experiences" id="experiencias">
 

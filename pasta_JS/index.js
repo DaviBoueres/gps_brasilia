@@ -111,3 +111,160 @@ document
     .forEach((elemento) => {
         revealObserver.observe(elemento);
     });
+
+    /* ===================================
+   MODAL DE GASTRONOMIA
+=================================== */
+
+// Elementos utilizados pelo modal
+const abrirGastronomia =
+    document.querySelector("#abrir-gastronomia");
+
+const modalGastronomia =
+    document.querySelector("#modal-gastronomia");
+
+const fecharGastronomia =
+    document.querySelector("#fechar-gastronomia");
+
+const containerGastronomia =
+    modalGastronomia.querySelector(".modal-container");
+
+// Guarda o último elemento selecionado
+let ultimoElementoFocado = null;
+
+// Abre o modal
+function abrirModalGastronomia() {
+
+    ultimoElementoFocado = document.activeElement;
+
+    modalGastronomia.classList.add("active");
+
+    modalGastronomia.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.classList.add("modal-open");
+
+    // Coloca o foco no botão de fechar
+    setTimeout(() => {
+        fecharGastronomia.focus();
+    }, 100);
+
+}
+
+// Fecha o modal
+function fecharModalGastronomia() {
+
+    modalGastronomia.classList.remove("active");
+
+    modalGastronomia.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.classList.remove("modal-open");
+
+    // Retorna o foco para a categoria Gastronomia
+    if (ultimoElementoFocado) {
+        ultimoElementoFocado.focus();
+    }
+
+}
+
+// Abre ao clicar em Gastronomia
+abrirGastronomia.addEventListener(
+    "click",
+    (evento) => {
+
+        evento.preventDefault();
+
+        abrirModalGastronomia();
+
+    }
+);
+
+// Fecha ao clicar no X
+fecharGastronomia.addEventListener(
+    "click",
+    fecharModalGastronomia
+);
+
+// Fecha ao clicar na área escura
+modalGastronomia.addEventListener(
+    "click",
+    (evento) => {
+
+        if (evento.target === modalGastronomia) {
+            fecharModalGastronomia();
+        }
+
+    }
+);
+
+// Fecha ao pressionar Esc
+document.addEventListener(
+    "keydown",
+    (evento) => {
+
+        const modalEstaAberto =
+            modalGastronomia.classList.contains("active");
+
+        if (
+            evento.key === "Escape" &&
+            modalEstaAberto
+        ) {
+            fecharModalGastronomia();
+        }
+
+    }
+);
+
+/* ===================================
+   BOTÕES DE FAVORITOS
+=================================== */
+
+const botoesFavoritos =
+    document.querySelectorAll(".favorite-button");
+
+botoesFavoritos.forEach((botao) => {
+
+    botao.addEventListener("click", () => {
+
+        const estaSelecionado =
+            botao.classList.toggle("selected");
+
+        botao.textContent =
+            estaSelecionado ? "♥" : "♡";
+
+        botao.setAttribute(
+            "aria-label",
+            estaSelecionado
+                ? "Remover dos favoritos"
+                : "Adicionar aos favoritos"
+        );
+
+    });
+
+});
+
+/* ===================================
+   FILTROS ILUSTRATIVOS
+=================================== */
+
+const botoesFiltro =
+    document.querySelectorAll(".filter-button");
+
+botoesFiltro.forEach((botao) => {
+
+    botao.addEventListener("click", () => {
+
+        botoesFiltro.forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        botao.classList.add("active");
+
+    });
+
+});
