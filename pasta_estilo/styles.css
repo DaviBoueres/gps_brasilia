@@ -87,12 +87,10 @@ button {
     color: var(--navy);
 }
 
-.brand-mark {
-    font-size: 2.5rem;
-    font-weight: 300;
-    line-height: 1;
+.brand-mark img {
+ width: 90px;
 
-    transform: rotate(45deg);
+
 }
 
 .brand span:last-child {
@@ -190,8 +188,6 @@ button {
 }
 
 .hero::after {
-    content: "";
-
     position: absolute;
     inset: 0;
 
@@ -679,22 +675,6 @@ button {
     overflow: hidden;
 }
 
-.site-footer::after {
-    content: "◇";
-
-    position: absolute;
-    right: -30px;
-    bottom: -120px;
-
-    color: var(--teal);
-
-    font-size: 18rem;
-
-    opacity: 0.3;
-
-    transform: rotate(45deg);
-}
-
 .brand-light {
     color: var(--white);
 }
@@ -707,6 +687,10 @@ button {
     font-size: 0.88rem;
 
     opacity: 0.72;
+}
+
+.logo_rodape{
+    width: 250px;
 }
 
 .site-footer h3 {
