@@ -520,6 +520,7 @@ button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 22px;
+    border-radius: 20px;
 }
 
 .place-card {
@@ -534,6 +535,8 @@ button {
     background: var(--navy);
 
     overflow: hidden;
+
+    border-radius: 20px;
 }
 
 .place-card img {
@@ -740,6 +743,17 @@ button {
 
     opacity: 0.65;
 }
+
+footer-logo
+    {
+        display: block  ;
+    
+        width: 500px;
+        height: auto;
+    
+        object-fit: contain;
+        
+    }
 
 /* ===================================
    ANIMAÇÕES
@@ -1491,4 +1505,241 @@ body.modal-open {
 
 .brand-mark{
     display: none !important;
+}
+/* ===================================
+   MENU DE PERFIL
+=================================== */
+
+.profile-menu {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Botão redondo do perfil */
+
+.profile-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    padding: 0;
+
+    border: 1px solid rgba(13, 27, 61, 0.22);
+    border-radius: 50%;
+
+    color: var(--navy);
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.profile-trigger svg {
+    width: 23px;
+    height: 23px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.profile-trigger:hover,
+.profile-trigger[aria-expanded="true"] {
+    color: #ffffff;
+    background: var(--navy);
+    border-color: var(--navy);
+
+    transform: translateY(-2px);
+}
+
+/* Caixa do menu */
+
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 16px);
+    right: 0;
+    z-index: 1000;
+
+    display: grid;
+
+    width: 270px;
+
+    padding: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(13, 27, 61, 0.12);
+    border-radius: 16px;
+
+    box-shadow:
+        0 24px 60px rgba(13, 27, 61, 0.2);
+
+    animation: abrirMenuPerfil 0.22s ease;
+}
+
+/* Faz o atributo hidden funcionar corretamente */
+
+.profile-dropdown[hidden] {
+    display: none;
+}
+
+/* Cabeçalho interno do menu */
+
+.profile-dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 8px;
+    padding: 12px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.profile-small-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    color: var(--white);
+    background: var(--navy);
+
+    font-size: 1.25rem;
+}
+
+.profile-dropdown-header div {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-dropdown-header strong {
+    color: var(--navy);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.profile-dropdown-header small {
+    color: var(--muted);
+
+    font-size: 0.72rem;
+}
+
+/* Links do menu de perfil */
+
+.profile-dropdown > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 12px 13px;
+
+    border-radius: 9px;
+
+    color: var(--navy);
+
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: none;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        padding 0.2s ease;
+}
+
+/* Remove a linha animada da navegação */
+
+.profile-dropdown > a::after {
+    display: none;
+}
+
+.profile-dropdown > a:hover {
+    padding-left: 17px;
+
+    color: var(--navy);
+    background: rgba(0, 191, 168, 0.13);
+}
+
+.profile-dropdown > a:last-child {
+    margin-top: 5px;
+
+    color: var(--blue);
+
+    border-top: 1px solid #e5e7eb;
+    border-radius: 0 0 9px 9px;
+}
+
+/* Animação de entrada */
+
+@keyframes abrirMenuPerfil {
+
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   MENU DE PERFIL NO CELULAR
+=================================== */
+
+@media (max-width: 850px) {
+
+    .profile-menu {
+        display: block;
+        width: 100%;
+
+        padding-top: 10px;
+
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .profile-trigger {
+        width: 44px;
+        height: 44px;
+    }
+
+    .profile-dropdown {
+        position: static;
+
+        width: 100%;
+
+        margin-top: 12px;
+
+        border-radius: 12px;
+
+        box-shadow:
+            0 12px 30px rgba(13, 27, 61, 0.12);
+    }
+
+    .profile-dropdown > a {
+        padding: 13px;
+    }
+
 }
