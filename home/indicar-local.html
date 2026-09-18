@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Indique um novo lugar para o GPS Brasília.">
+    <title>Indicar um local | GPS Brasília</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/pasta_estilo/paginas.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="newindex.html#inicio" aria-label="GPS Brasília, início"><img src="/assets/Inserir um título.png" alt="GPS Brasília"></a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <nav class="main-nav" aria-label="Navegação principal">
+            <a href="newindex.html#inicio">Início</a><a href="newindex.html#sobre">Sobre</a><a href="newindex.html#explorar">Explorar</a><a href="newindex.html#experiencias">Experiências</a><a href="newindex.html#mapa">Mapa</a>
+            <div class="profile-menu">
+                <button class="profile-trigger" type="button" aria-label="Abrir menu do perfil" aria-expanded="false" aria-controls="profile-dropdown">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"></path></svg>
+                </button>
+                <div class="profile-dropdown" id="profile-dropdown" hidden>
+                    <div class="profile-dropdown-header"><span class="profile-avatar">P</span><div><strong>Seu perfil</strong><small>GPS Brasília</small></div></div>
+                    <a href="minha-conta.html"><span>Minha conta</span><span>→</span></a>
+                    <a href="favoritos.html"><span>Meus favoritos</span><span>♥</span></a>
+                    <a class="current" href="indicar-local.html"><span>Indicar um local</span><span>＋</span></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero recommendation-hero">
+            <div class="page-hero-content">
+                <p class="eyebrow">Guia colaborativo</p><h1>Indique<br>um lugar</h1><div class="rule"></div>
+                <p>Conhece um espaço que merece entrar no GPS Brasília? Conte para a gente.</p>
+            </div>
+            <div class="hero-symbol" aria-hidden="true">＋</div>
+        </section>
+
+        <section class="content-section recommendation-layout">
+            <div class="recommendation-intro">
+                <p class="eyebrow">Como funciona</p>
+                <h2>Sua indicação ajuda a cidade a ser descoberta</h2>
+                <ol class="steps-list">
+                    <li><strong>01</strong><div><h3>Você indica</h3><p>Preencha os dados principais e conte por que o local é especial.</p></div></li>
+                    <li><strong>02</strong><div><h3>Nós analisamos</h3><p>A equipe confere as informações, imagens e adequação ao guia.</p></div></li>
+                    <li><strong>03</strong><div><h3>Brasília descobre</h3><p>Após a aprovação, o lugar pode ser publicado no GPS Brasília.</p></div></li>
+                </ol>
+                <div class="info-note"><strong>Importante</strong><p>Esta versão demonstra o funcionamento. Para envio real, o formulário deverá ser conectado a um banco de dados ou serviço de e-mail.</p></div>
+            </div>
+
+            <div class="form-card">
+                <div class="panel-heading"><div><p class="eyebrow">Nova recomendação</p><h2>Dados do local</h2></div></div>
+                <form class="standard-form" id="recommendation-form" novalidate>
+                    <div class="form-grid">
+                        <label class="form-field full"><span>Nome do local *</span><input type="text" name="local" required placeholder="Ex.: Café do Cerrado"></label>
+                        <label class="form-field"><span>Categoria *</span><select name="categoria" required><option value="">Selecione</option><option>Gastronomia</option><option>Lazer ao ar livre</option><option>Cultura</option><option>Arquitetura</option><option>Compras</option><option>Vida noturna</option><option>História</option><option>Família</option></select></label>
+                        <label class="form-field"><span>Região administrativa *</span><input type="text" name="regiao" required placeholder="Ex.: Asa Norte"></label>
+                        <label class="form-field full"><span>Endereço</span><input type="text" name="endereco" placeholder="Quadra, conjunto, número e referência"></label>
+                        <label class="form-field"><span>Instagram ou site</span><input type="url" name="site" placeholder="https://"></label>
+                        <label class="form-field"><span>Faixa de preço</span><select name="preco"><option value="">Não sei informar</option><option>$ · Econômico</option><option>$$ · Moderado</option><option>$$$ · Especial</option></select></label>
+                        <label class="form-field full"><span>Por que este lugar deve entrar no GPS Brasília? *</span><textarea name="descricao" required minlength="30" rows="6" placeholder="Conte a história, os diferenciais e o tipo de experiência oferecida."></textarea><small>Escreva pelo menos 30 caracteres.</small></label>
+                        <label class="form-field full file-field"><span>Imagem do local</span><input id="place-image-input" type="file" name="imagem" accept="image/*"><small>Formatos JPG, PNG ou WEBP.</small></label>
+                    </div>
+                    <div class="image-preview" id="image-preview" hidden><img alt="Prévia da imagem selecionada"><button type="button" id="remove-preview">Remover imagem</button></div>
+                    <label class="consent-field"><input type="checkbox" name="autorizacao" required><span>Confirmo que as informações são verdadeiras e que possuo autorização para enviar a imagem.</span></label>
+                    <div class="form-actions"><button class="button primary" type="submit">Enviar indicação</button><span class="required-note">* Campos obrigatórios</span></div>
+                </form>
+                <div class="success-panel" id="recommendation-success" hidden><div>✓</div><h2>Indicação recebida!</h2><p>Obrigado por colaborar com o GPS Brasília. A equipe poderá analisar as informações antes da publicação.</p><button class="button primary" id="new-recommendation" type="button">Fazer outra indicação</button></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-brand"><img src="/assets/Rectangle 6.png" alt="GPS Brasília"><p>Descubra. Viva. Pertença.</p></div>
+        <div><h3>Navegue</h3><a href="newindex.html#explorar">Explorar</a><a href="newindex.html#experiencias">Experiências</a><a href="newindex.html#mapa">Mapa</a></div>
+        <div><h3>Informações</h3><a href="newindex.html#sobre">Sobre nós</a><a href="indicar-local.html">Indicar local</a></div>
+        <div><h3>Contato</h3><p>contato@gpsbrasilia.com.br</p><p>Brasília, DF</p></div>
+        <div class="footer-bottom"><span>© 2026 GPS Brasília.</span><span>Descubra. Viva. Pertença.</span></div>
+    </footer>
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="/pasta_JS/paginas.js"></script>
+</body>
+</html>
