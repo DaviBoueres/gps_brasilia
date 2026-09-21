@@ -268,3 +268,130 @@ botoesFiltro.forEach((botao) => {
     });
 
 });
+/* ===================================
+   MENU DO PERFIL
+=================================== */
+
+const profileMenu =
+    document.querySelector(".profile-menu");
+
+const profileTrigger =
+    document.querySelector("#profile-trigger");
+
+const profileDropdown =
+    document.querySelector("#profile-dropdown");
+
+/* Abre o menu do perfil */
+
+function abrirMenuPerfil() {
+
+    if (!profileTrigger || !profileDropdown) {
+        return;
+    }
+
+    profileDropdown.hidden = false;
+
+    profileTrigger.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+}
+
+/* Fecha o menu do perfil */
+
+function fecharMenuPerfil() {
+
+    if (!profileTrigger || !profileDropdown) {
+        return;
+    }
+
+    profileDropdown.hidden = true;
+
+    profileTrigger.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+}
+
+/* Alterna entre aberto e fechado */
+
+function alternarMenuPerfil() {
+
+    const menuEstaAberto =
+        profileTrigger.getAttribute("aria-expanded") === "true";
+
+    if (menuEstaAberto) {
+        fecharMenuPerfil();
+    } else {
+        abrirMenuPerfil();
+    }
+}
+
+/* Clique no ícone do perfil */
+
+if (profileTrigger && profileDropdown) {
+
+    profileTrigger.addEventListener(
+        "click",
+        (evento) => {
+
+            evento.stopPropagation();
+
+            alternarMenuPerfil();
+
+        }
+    );
+
+}
+
+/* Fecha ao clicar fora do menu */
+
+document.addEventListener(
+    "click",
+    (evento) => {
+
+        if (
+            profileMenu &&
+            !profileMenu.contains(evento.target)
+        ) {
+            fecharMenuPerfil();
+        }
+
+    }
+);
+
+/* Fecha ao apertar ESC */
+
+document.addEventListener(
+    "keydown",
+    (evento) => {
+
+        if (evento.key === "Escape") {
+
+            fecharMenuPerfil();
+
+            if (profileTrigger) {
+                profileTrigger.focus();
+            }
+
+        }
+
+    }
+);
+
+/* Fecha depois de selecionar uma opção */
+
+if (profileDropdown) {
+
+    profileDropdown
+        .querySelectorAll("a")
+        .forEach((link) => {
+
+            link.addEventListener(
+                "click",
+                fecharMenuPerfil
+            );
+
+        });
+
+}

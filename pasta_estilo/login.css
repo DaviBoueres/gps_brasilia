@@ -153,3 +153,26 @@
 .auth-btn:hover {
   background-color: #0F4299;
 }
+/* Esconde todos os formulários por padrão */
+.auth-form {
+  display: none !important;
+}
+
+.auth-form.active {
+  display: block !important; /* Altera para flex !important se usares flexbox para alinhar os inputs lá dentro */
+}
+.mensagem-alerta {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+  min-height: 20px; /* Mantém o espaço reservado para o layout não pular */
+  font-weight: 500;
+}
+
+.erro {
+  color: #ff4d4d; /* Vermelho */
+}
+
+.sucesso {
+  color: #00BFA6; /* Verde-água do GPS Brasília */
+}

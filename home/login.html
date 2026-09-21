@@ -4,16 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login / Cadastro - GPS Brasília</title>
-  <!-- Adicione o link para o seu arquivo CSS principal aqui -->
-  <link rel="stylesheet" href="/pasta_estilo/login.css">
+  
+  <!-- Estilos essenciais incorporados para garantir o funcionamento -->
+  <style>
+    /* Esconde todos os formulários por padrão, com prioridade máxima */
+    .auth-form {
+      display: none !important;
+    }
+
+    /* Mostra apenas o formulário ativo */
+    .auth-form.active {
+      display: block !important;
+    }
+
+    /* Estilos para as mensagens de erro e sucesso */
+    .mensagem-alerta {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 15px;
+      min-height: 20px; /* Mantém o espaço reservado para o layout não pular */
+      font-weight: 500;
+    }
+
+    .erro {
+      color: #ff4d4d; /* Vermelho para erros */
+    }
+
+    .sucesso {
+      color: #00BFA6; /* Verde-água para sucesso */
+    }
+  </style>
+
+  <!-- O teu CSS principal continua aqui -->
+  <link rel="stylesheet" href="../pasta_estilo/login.css">
 </head>
 <body class="auth-body">
 
   <div class="auth-wrapper">
-    
     <!-- Logo ou Título de Retorno -->
     <div class="auth-logo">
-      <a href="index.html">
+      <a href="#">
         <img src="/assets/image-logo-removebg-preview.png" alt="GPS Brasília Logo" width="60">
         <h2>GPS BRASÍLIA</h2>
       </a>
@@ -24,8 +54,8 @@
       
       <!-- Abas de Navegação -->
       <div class="auth-tabs">
-        <button class="auth-tab active" onclick="showForm('login')">LOGIN</button>
-        <button class="auth-tab" onclick="showForm('cadastro')">CADASTRO</button>
+        <button class="auth-tab active" onclick="showForm(event, 'login')">LOGIN</button>
+        <button class="auth-tab" onclick="showForm(event, 'cadastro')">CADASTRO</button>
       </div>
 
       <!-- Formulário de Login -->
@@ -47,6 +77,9 @@
           <a href="#" class="forgot-password">Esqueceu a senha?</a>
         </div>
 
+        <!-- Div para a mensagem de erro/sucesso do Login -->
+        <div id="msg-login" class="mensagem-alerta"></div>
+
         <button type="submit" class="auth-btn">ENTRAR</button>
       </form>
 
@@ -67,23 +100,34 @@
           <input type="password" id="cad-senha" placeholder="Crie uma senha forte" required>
         </div>
 
+        <!-- Div para a mensagem de erro/sucesso do Cadastro -->
+        <div id="msg-cadastro" class="mensagem-alerta"></div>
+
         <button type="submit" class="auth-btn">CRIAR CONTA</button>
       </form>
 
     </div>
   </div>
 
-  <!-- Pequeno script para alternar entre as abas -->
+  <!-- Script para alternar as abas -->
   <script>
-    function showForm(formType) {
-      // Remove classe 'active' de todos
+    function showForm(e, formType) {
+      // Previne qualquer comportamento padrão indesejado do botão
+      e.preventDefault();
+
+      // Remove a classe 'active' de todos os formulários e abas
       document.querySelectorAll('.auth-form').forEach(form => form.classList.remove('active'));
       document.querySelectorAll('.auth-tab').forEach(tab => tab.classList.remove('active'));
       
-      // Adiciona classe 'active' no selecionado
+      // Adiciona a classe 'active' ao formulário correspondente
       document.getElementById('form-' + formType).classList.add('active');
-      event.target.classList.add('active');
+      
+      // Adiciona a classe 'active' ao botão clicado
+      e.currentTarget.classList.add('active');
     }
   </script>
+  
+  <!-- O teu ficheiro de validação -->
+  <script src="../pasta_JS/logvali.js"></script>
 </body>
 </html>
