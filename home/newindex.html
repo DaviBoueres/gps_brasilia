@@ -19,7 +19,7 @@
 
     <!-- CSS principal -->
     <link rel="stylesheet" href="/pasta_estilo/styles.css">
-
+    <link rel="stylesheet" href="/pasta_estilo/experiencias-modal.css">
     <style>
 
     .gps-navbar {
@@ -149,27 +149,106 @@
     <!-- CABEÇALHO -->
     <header class="site-header" id="inicio">
 
-        <a class="brand" href="#inicio" aria-label="GPS Brasília, início">
-            <span class="brand-mark" aria-hidden="true"><img src="../assets/logo-sobre.png" alt=""></span>
+    <!-- LOGO -->
+    <a class="brand" href="#inicio" aria-label="GPS Brasília, início">
+        <img
+            class="header-logo"
+            src="/assets/Inserir um título.png"
+            alt="Logo GPS Brasília"
+        >
+    </a>
 
-            <img class="header-logo" src="/assets/Inserir um título.png">
-        </a>
+    <!-- BOTÃO DO MENU PARA CELULAR -->
+    <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+    >
+        ☰
+    </button>
 
-        <!-- Botão exibido em celulares -->
-        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-            ☰
-        </button>
+    <!-- NAVEGAÇÃO -->
+    <nav class="main-nav" aria-label="Navegação principal">
 
-        <nav class="main-nav" aria-label="Navegação principal">
-            <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#explorar">Explorar</a>
-            <a href="#experiencias">Experiências</a>
-            <a href="#mapa">Mapa</a>
-            <a href="login.html">login</a>
-        </nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#explorar">Explorar</a>
+        <a href="#experiencias">Experiências</a>
+        <a href="#mapa">Mapa</a>
 
-    </header>
+        <!-- MENU DE PERFIL -->
+        <div class="profile-menu">
+
+            <button
+                class="profile-trigger"
+                id="profile-trigger"
+                type="button"
+                aria-label="Abrir menu do perfil"
+                aria-expanded="false"
+                aria-controls="profile-dropdown"
+            >
+                <!-- ÍCONE DE PERFIL -->
+                <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+                    <circle cx="12" cy="8" r="4"></circle>
+
+                    <path
+                        d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"
+                    ></path>
+                </svg>
+            </button>
+
+            <!-- MENU QUE ABRE AO CLICAR -->
+            <div
+                class="profile-dropdown"
+                id="profile-dropdown"
+                hidden
+            >
+
+                <div class="profile-dropdown-header">
+                    <span class="profile-small-icon">♙</span>
+
+                    <div>
+                        <strong>Bem-vindo!</strong>
+                        <small>Acesse sua conta</small>
+                    </div>
+                </div>
+
+                <a href="login.html">
+                    <span>Entrar</span>
+                    <span>→</span>
+                </a>
+
+                <a href="cadastro.html">
+                    <span>Criar cadastro</span>
+                    <span>→</span>
+                </a>
+
+                <a href="minha-conta.html">
+                    <span>Minha conta</span>
+                    <span>→</span>
+                </a>
+
+                <a href="favoritos.html">
+                    <span>Meus favoritos</span>
+                    <span>♡</span>
+                </a>
+
+                <a href="indicar-local.html">
+                    <span>Indicar um local</span>
+                    <span>＋</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
 
     <main>
 
@@ -252,7 +331,12 @@
                     ◇
                 </div>
 
-                <img src="../assets/palacio-da-alvorada.webp" alt="Palácio da Alvorada, em Brasília" loading="lazy">
+                <!-- TROQUE A IMAGEM DA SEÇÃO SOBRE AQUI -->
+                <img
+                    src="/assets/palacio-alvorada.jpg"
+                    alt="Palácio da Alvorada, em Brasília"
+                    loading="lazy"
+                >
 
             </div>
 
@@ -433,8 +517,8 @@
                 <div class="gastronomia-image">
 
                     <img
-                        src="./assets/restaurante-1.jpg"
-                        alt="Restaurante em Brasília"
+                        src="/assets/images (1).jpg"
+                        alt="Dalva cozinha"
                     >
 
                     <button
@@ -462,8 +546,7 @@
                     </h3>
 
                     <p>
-                        Cozinha brasileira contemporânea em um ambiente
-                        inspirado na arquitetura da capital.
+                       De um livro de receitas da família, um capricho delicioso.
                     </p>
 
                     <div class="place-footer">
@@ -486,7 +569,7 @@
                 <div class="gastronomia-image">
 
                     <img
-                        src="./assets/restaurante-2.jpg"
+                        src="/assets/images.jpg"
                         alt="Café localizado em Brasília"
                     >
 
@@ -606,102 +689,176 @@
 
     </div>
 </div>
-        <!-- EXPERIÊNCIAS -->
-        <section class="section experiences" id="experiencias">
+<!-- EXPERIÊNCIAS -->
+<section class="section experiences" id="experiencias">
 
-            <div class="section-heading reveal">
+    <div class="section-heading reveal">
+        <div>
+            <p class="eyebrow">Para guardar na memória</p>
+            <h2>Viva experiências<br>inesquecíveis</h2>
+            <div class="rule"></div>
+        </div>
 
-                <div>
+        <p>
+            Atividades, eventos e roteiros para você viver
+            o melhor de Brasília.
+        </p>
+    </div>
 
-                    <p class="eyebrow">
-                        Para guardar na memória
-                    </p>
+    <div class="card-grid">
 
-                    <h2>
-                        Viva experiências
-                        <br>
-                        inesquecíveis
-                    </h2>
+        <article class="place-card reveal">
+            <!-- IMAGEM DO PRIMEIRO CARD -->
+            <img src="https://mediaassets.cbre.com/-/media/project/cbre/shared-site/latam/brazil/brasilia-752x.jpg"
+                alt="Catedral Metropolitana de Brasília ao entardecer" loading="lazy">
 
-                    <div class="rule"></div>
+            <div>
+                <span>Roteiro</span>
+                <h3>Brasília Monumental</h3>
 
-                </div>
+                <a href="#" class="experience-open" data-experience="monumental">
+                    Ver roteiro →
+                </a>
+            </div>
+        </article>
+
+        <article class="place-card reveal">
+            <!-- IMAGEM DO SEGUNDO CARD -->
+            <img src="https://www.viajenaviagem.com/wp-content/uploads/2014/04/brasilia-ponte-jk-1920x640-1.jpg"
+                alt="Ponte JK ao entardecer" loading="lazy">
+
+            <div>
+                <span>Experiência</span>
+                <h3>Pôr do sol no Lago Sul</h3>
+
+                <a href="#" class="experience-open" data-experience="por-do-sol">
+                    Ver mais →
+                </a>
+            </div>
+        </article>
+
+        <article class="place-card reveal accent-card">
+            <div class="card-number">03</div>
+
+            <div>
+                <span>Evento</span>
+                <h3>Brasília depois das seis</h3>
 
                 <p>
-                    Atividades, eventos e roteiros para você viver
-                    o melhor de Brasília.
+                    Descubra cultura, gastronomia e encontros
+                    quando a cidade acende.
                 </p>
 
+                <a href="#" class="experience-open" data-experience="depois-das-seis">
+                    Ver mais →
+                </a>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<!--
+    MODAL DAS EXPERIÊNCIAS
+    Cole este bloco depois da seção Experiências ou antes de </main>.
+    O conteúdo é preenchido pelo arquivo experiencias-modal.js.
+-->
+<div class="experience-modal" id="experience-modal" role="dialog" aria-modal="true"
+    aria-labelledby="experience-modal-title" aria-hidden="true">
+    <div class="experience-dialog" tabindex="-1">
+
+        <button class="experience-close" type="button" aria-label="Fechar detalhes da experiência">
+            ×
+        </button>
+
+        <!-- METADE ESQUERDA: GALERIA -->
+        <div class="experience-gallery">
+
+            <div class="experience-main-image">
+                <img src="" alt="" id="experience-main-image">
+
+                <button class="gallery-arrow gallery-prev" type="button" aria-label="Imagem anterior">
+                    ‹
+                </button>
+
+                <button class="gallery-arrow gallery-next" type="button" aria-label="Próxima imagem">
+                    ›
+                </button>
+
+                <span class="gallery-counter" id="gallery-counter">1 / 4</span>
             </div>
 
-            <div class="card-grid">
+            <div class="experience-thumbnails" id="experience-thumbnails" aria-label="Miniaturas da experiência"></div>
 
-                <article class="place-card reveal">
+        </div>
 
-                    <img src="https://mediaassets.cbre.com/-/media/project/cbre/shared-site/latam/brazil/brasilia-752x.jpg"
-                        alt="Catedral Metropolitana de Brasília ao entardecer" loading="lazy">
+        <!-- METADE DIREITA: INFORMAÇÕES -->
+        <div class="experience-details">
 
-                    <div>
+            <div class="experience-heading">
+                <div>
+                    <p class="experience-category" id="experience-category"></p>
+                    <h2 id="experience-modal-title"></h2>
+                </div>
 
-                        <span>Roteiro</span>
-
-                        <h3>Brasília Monumental</h3>
-
-                        <a href="#mapa">
-                            Ver roteiro →
-                        </a>
-
-                    </div>
-
-                </article>
-
-                <article class="place-card reveal">
-
-                    <img src="https://www.viajenaviagem.com/wp-content/uploads/2014/04/brasilia-ponte-jk-1920x640-1.jpg"
-                        alt="Ponte JK ao entardecer" loading="lazy">
-
-                    <div>
-
-                        <span>Experiência</span>
-
-                        <h3>Pôr do sol no Lago Sul</h3>
-
-                        <a href="#mapa">
-                            Ver mais →
-                        </a>
-
-                    </div>
-
-                </article>
-
-                <article class="place-card reveal accent-card">
-
-                    <div class="card-number">
-                        03
-                    </div>
-
-                    <div>
-
-                        <span>Evento</span>
-
-                        <h3>Brasília depois das seis</h3>
-
-                        <p>
-                            Descubra cultura, gastronomia e encontros
-                            quando a cidade acende.
-                        </p>
-
-                        <a href="#mapa">
-                            Ver mais →
-                        </a>
-
-                    </div>
-
-                </article>
-
+                <button class="experience-favorite" type="button" aria-label="Adicionar experiência aos favoritos">
+                    ♡
+                </button>
             </div>
 
-        </section>
+            <div class="experience-location">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 22s7-6.1 7-13A7 7 0 1 0 5 9c0 6.9 7 13 7 13Z"></path>
+                    <circle cx="12" cy="9" r="2.3"></circle>
+                </svg>
+                <span id="experience-address"></span>
+            </div>
+
+            <p class="experience-description" id="experience-description"></p>
+
+            <div class="experience-info-grid">
+                <div>
+                    <span>Duração</span>
+                    <strong id="experience-duration"></strong>
+                </div>
+
+                <div>
+                    <span>Melhor horário</span>
+                    <strong id="experience-time"></strong>
+                </div>
+
+                <div>
+                    <span>Valor</span>
+                    <strong id="experience-price"></strong>
+                </div>
+
+                <div>
+                    <span>Indicado para</span>
+                    <strong id="experience-audience"></strong>
+                </div>
+            </div>
+
+            <div class="experience-highlights">
+                <h3>O que você vai encontrar</h3>
+                <ul id="experience-highlights"></ul>
+            </div>
+
+            <div class="experience-actions">
+                <a class="experience-route" id="experience-route" href="#" target="_blank" rel="noopener">
+                    Ver rota no mapa ↗
+                </a>
+
+                <button class="experience-share" type="button">
+                    Compartilhar
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
 
         <!-- MAPA -->
         <section class="map-section" id="mapa">
@@ -748,16 +905,17 @@
 
         <div class="footer-brand">
 
-            <a class="brand brand-light" href="#inicio">
+            <a
+                class="footer-logo-link"
+                href="#inicio"
+                aria-label="GPS Brasília, voltar ao início">
 
-                <span class="brand-mark ">
-                    <img src="../assets/image-logo-removebg-preview.png" class="logo_rodape" alt="logo">
-                </span>
-
-                <span>
-                    <strong>GPS</strong>
-                    <small>BRASÍLIA</small>
-                </span>
+                <!-- TROQUE A LOGO DO RODAPÉ AQUI -->
+                <img
+                    class="footer-logo"
+                    src="/assets/Rectangle 6.png"
+                    alt="GPS Brasília"
+                >
 
             </a>
 
@@ -820,7 +978,7 @@
 
     <!-- JavaScript -->
     <script src="/pasta_JS/index.js"></script>
-
+    <script src="/pasta_JS/experiencias-modal.js"></script>
 </body>
 
 </html>
