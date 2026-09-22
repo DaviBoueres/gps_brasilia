@@ -1,0 +1,55 @@
+GPS BRASÍLIA — SOMENTE AS CATEGORIAS DO EXPLORAR
+
+Este pacote contém somente o HTML, CSS e JavaScript do Explorar.
+Faça uma cópia do newindex.html e do index.js antes de começar.
+
+1. COPIE OS DOIS ARQUIVOS
+Copie explorar-modal.css para a pasta onde está seu styles.css.
+Copie explorar-modal.js para a pasta onde está seu index.js.
+Não substitua styles.css nem index.js por esses arquivos.
+
+2. COLE O HTML
+Abra TRECHO-INDEX-EXPLORAR.html e copie todo o conteúdo.
+No newindex.html, substitua apenas a seção com id="explorar" e o modal
+antigo com id="modal-gastronomia" por esse conteúdo, uma única vez.
+O trecho já inclui os oito botões e o novo modal. Não é uma página separada.
+Se você já fez essa substituição, não cole novamente.
+
+3. CONECTE OS ARQUIVOS
+No head do newindex.html, adicione:
+<link rel="stylesheet" href="./pasta_estilo/explorar-modal.css">
+
+Antes de </body>, depois dos scripts existentes, adicione:
+<script src="./pasta_JS/explorar-modal.js"></script>
+
+Os caminhos acima servem se pasta_estilo e pasta_JS estiverem na MESMA
+pasta que newindex.html. Se estiverem um nível acima, use:
+../pasta_estilo/explorar-modal.css
+../pasta_JS/explorar-modal.js
+
+Dica: copie o caminho que já funciona para styles.css e troque apenas
+styles.css por explorar-modal.css. Faça o mesmo com index.js.
+Não altere caminhos de arquivos que já funcionam.
+
+4. RETIRE O CONTROLADOR ANTIGO DA GASTRONOMIA
+No index.js original enviado na conversa, o trecho antigo começa no comentário
+MODAL DE GASTRONOMIA e termina ao fechar o bloco FILTROS ILUSTRATIVOS:
+
+botoesFiltro.forEach((botao) => {
+    ...
+});
+
+Retire somente esse trecho antigo. Preserve menu, animações e perfil.
+Não apague até o final do arquivo se houver outros códigos depois.
+Se você já retirou esse trecho, não faça esta etapa novamente.
+
+5. SALVE E TESTE
+Salve tudo. Abra newindex.html com o Live Server e atualize com Ctrl + F5.
+Clique nas categorias e teste os filtros e o botão X.
+
+EDITAR CONTEÚDO
+Os cards são configurados no início de explorar-modal.js, em exploreData.
+As fotografias externas são ilustrativas, não fotos verificadas dos locais.
+Troque-as pelas suas imagens antes de publicar. Nomes genéricos e preços
+são exemplos para o layout. Os corações são demonstrativos e não estão
+conectados à página de favoritos.
