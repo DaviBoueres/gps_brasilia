@@ -1,0 +1,95 @@
+<!--
+    SUBSTITUA NO newindex.html:
+    1. A seção atual <section class="section explore" id="explorar"> ... </section>.
+    2. O bloco antigo <div id="modal-gastronomia"> ... </div>.
+    Cole este arquivo uma única vez no lugar dos dois blocos antigos.
+-->
+
+<section class="section explore" id="explorar">
+    <div class="section-heading reveal">
+        <div>
+            <p class="eyebrow">Do seu jeito</p>
+            <h2>Explore<br>Brasília</h2>
+            <div class="rule"></div>
+        </div>
+
+        <p>
+            Encontre o que combina com você e descubra
+            o melhor da nossa cidade.
+        </p>
+    </div>
+
+    <div class="category-grid reveal">
+        <button class="explore-category" type="button" data-category="gastronomia">
+            <b aria-hidden="true">♨</b>
+            <span>Gastronomia</span>
+        </button>
+
+        <button class="explore-category" type="button" data-category="lazer">
+            <b aria-hidden="true">♧</b>
+            <span>Lazer ao ar livre</span>
+        </button>
+
+        <button class="explore-category" type="button" data-category="cultura">
+            <b aria-hidden="true">◉</b>
+            <span>Cultura</span>
+        </button>
+
+        <button class="explore-category" type="button" data-category="arquitetura">
+            <b aria-hidden="true">⌂</b>
+            <span>Arquitetura</span>
+        </button>
+
+        <button class="explore-category" type="button" data-category="compras">
+            <b aria-hidden="true">▢</b>
+            <span>Compras</span>
+        </button>
+
+        <button class="explore-category" type="button" data-category="vida-noturna">
+            <b aria-hidden="true">☾</b>
+            <span>Vida noturna</span>
+        </button>
+
+        <button class="explore-category" type="button" data-category="historia">
+            <b aria-hidden="true">▱</b>
+            <span>História</span>
+        </button>
+
+        <button class="explore-category" type="button" data-category="familia">
+            <b aria-hidden="true">♙</b>
+            <span>Família</span>
+        </button>
+    </div>
+</section>
+
+<!-- UM ÚNICO MODAL É UTILIZADO PELAS OITO CATEGORIAS -->
+<div
+    class="explore-modal"
+    id="explore-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="explore-modal-title"
+    aria-hidden="true"
+>
+    <div class="explore-dialog" tabindex="-1">
+        <header class="explore-modal-header">
+            <div>
+                <p class="explore-modal-eyebrow">Explore Brasília</p>
+                <h2 id="explore-modal-title"></h2>
+                <div class="explore-modal-rule"></div>
+                <p class="explore-modal-description" id="explore-modal-description"></p>
+            </div>
+
+            <button class="explore-modal-close" type="button" aria-label="Fechar categoria">×</button>
+        </header>
+
+        <div class="explore-modal-filters" id="explore-modal-filters"></div>
+
+        <div class="explore-places-grid" id="explore-places-grid"></div>
+
+        <div class="explore-modal-bottom">
+            <p>Conhece outro lugar especial?</p>
+            <a href="indicar-local.html">Indique um lugar →</a>
+        </div>
+    </div>
+</div>

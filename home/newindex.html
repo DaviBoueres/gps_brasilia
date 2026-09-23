@@ -20,6 +20,7 @@
     <!-- CSS principal -->
     <link rel="stylesheet" href="/pasta_estilo/styles.css">
     <link rel="stylesheet" href="/pasta_estilo/experiencias-modal.css">
+    <link rel="stylesheet" href="/pasta_estilo/explorar-modal.css">
     <style>
 
     .gps-navbar {
@@ -362,120 +363,82 @@
         </section>
 
         <!-- EXPLORAR -->
-        <section class="section explore" id="explorar">
+<section class="section explore" id="explorar">
+    <div class="section-heading reveal">
+        <div>
+            <p class="eyebrow">Do seu jeito</p>
+            <h2>Explore<br>Brasília</h2>
+            <div class="rule"></div>
+        </div>
 
-            <div class="section-heading reveal">
+        <p>
+            Encontre o que combina com você e descubra
+            o melhor da nossa cidade.
+        </p>
+    </div>
 
-                <div>
+    <div class="category-grid reveal">
+        <button class="explore-category" type="button" data-category="gastronomia">
+            <b aria-hidden="true">♨</b>
+            <span>Gastronomia</span>
+        </button>
 
-                    <p class="eyebrow">Do seu jeito</p>
+        <button class="explore-category" type="button" data-category="lazer">
+            <b aria-hidden="true">♧</b>
+            <span>Lazer ao ar livre</span>
+        </button>
 
-                    <h2>
-                        Explore
-                        <br>
-                        Brasília
-                    </h2>
+        <button class="explore-category" type="button" data-category="cultura">
+            <b aria-hidden="true">◉</b>
+            <span>Cultura</span>
+        </button>
 
-                    <div class="rule"></div>
+        <button class="explore-category" type="button" data-category="arquitetura">
+            <b aria-hidden="true">⌂</b>
+            <span>Arquitetura</span>
+        </button>
 
-                </div>
+        <button class="explore-category" type="button" data-category="compras">
+            <b aria-hidden="true">▢</b>
+            <span>Compras</span>
+        </button>
 
-                <p>
-                    Encontre o que combina com você e descubra
-                    o melhor da nossa cidade.
-                </p>
+        <button class="explore-category" type="button" data-category="vida-noturna">
+            <b aria-hidden="true">☾</b>
+            <span>Vida noturna</span>
+        </button>
 
-            </div>
+        <button class="explore-category" type="button" data-category="historia">
+            <b aria-hidden="true">▱</b>
+            <span>História</span>
+        </button>
 
-            <div class="category-grid reveal">
+        <button class="explore-category" type="button" data-category="familia">
+            <b aria-hidden="true">♙</b>
+            <span>Família</span>
+        </button>
+    </div>
+</section>
 
-                <a href="#"class="categoria card" id="abrir-gastronomia">
-
-                    <b>♨</b>
-                    <span>Gastronomia</span>
-                </a>
-
-                <a href="#experiencias">
-                    <b>♧</b>
-                    <span>Lazer ao ar livre</span>
-                </a>
-
-                <a href="#experiencias">
-                    <b>◉</b>
-                    <span>Cultura</span>
-                </a>
-
-                <a href="#experiencias">
-                    <b>⌂</b>
-                    <span>Arquitetura</span>
-                </a>
-
-                <a href="#experiencias">
-                    <b>🛍</b>
-                    <span>Compras</span>
-                </a>
-
-                <a href="#experiencias">
-                    <b>☾</b>
-                    <span>Vida noturna</span>
-                </a>
-
-                <a href="#experiencias">
-                    <b>▱</b>
-                    <span>História</span>
-                </a>
-
-                <a href="#experiencias">
-                    <b>♙</b>
-                    <span>Família</span>
-                </a>
-
-            </div>
-
-        </section>
-        <!-- MODAL DE GASTRONOMIA -->
+<!-- UM ÚNICO MODAL É UTILIZADO PELAS OITO CATEGORIAS -->
 <div
-    class="modal-overlay"
-    id="modal-gastronomia"
+    class="explore-modal"
+    id="explore-modal"
     role="dialog"
     aria-modal="true"
-    aria-labelledby="titulo-gastronomia"
+    aria-labelledby="explore-modal-title"
     aria-hidden="true"
 >
-    <div
-        class="modal-container"
-        tabindex="-1"
-    >
-
-        <!-- Cabeçalho do modal -->
-        <header class="modal-header">
-
+    <div class="explore-dialog" tabindex="-1">
+        <header class="explore-modal-header">
             <div>
-                <p class="modal-eyebrow">
-                    Explore Brasília
-                </p>
-
-                <h2 id="titulo-gastronomia">
-                    Gastronomia
-                </h2>
-
-                <div class="modal-rule"></div>
-
-                <p class="modal-description">
-                    Descubra sabores, encontros e experiências
-                    gastronômicas em diferentes regiões de Brasília.
-                </p>
+                <p class="explore-modal-eyebrow">Explore Brasília</p>
+                <h2 id="explore-modal-title"></h2>
+                <div class="explore-modal-rule"></div>
+                <p class="explore-modal-description" id="explore-modal-description"></p>
             </div>
 
-            <button
-                class="modal-close"
-                id="fechar-gastronomia"
-                type="button"
-                aria-label="Fechar Gastronomia"
-            >
-                ×
-            </button>
-
+            <button class="explore-modal-close" type="button" aria-label="Fechar categoria">×</button>
         </header>
 
         <!-- Filtros ilustrativos -->
@@ -665,24 +628,10 @@
 
             </article>
 
+        <div class="explore-modal-bottom">
+            <p>Conhece outro lugar especial?</p>
+            <a href="indicar-local.html">Indique um lugar →</a>
         </div>
-
-        <!-- Final do modal -->
-        <div class="modal-bottom">
-
-            <p>
-                Conhece outro lugar especial?
-            </p>
-
-            <a
-                href="mailto:contato@gpsbrasilia.com.br"
-                class="modal-partner-link"
-            >
-                Indique um lugar →
-            </a>
-
-        </div>
-
     </div>
 </div>
         <!-- EXPERIÊNCIAS -->
@@ -975,6 +924,7 @@
     <!-- JavaScript -->
     <script src="/pasta_JS/index.js"></script>
     <script src="/pasta_JS/experiencias-modal.js"></script>
+    <script src="/pasta_JS/explorar-modal.js"></script>
 </body>
 
 </html>
