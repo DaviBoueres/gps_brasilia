@@ -223,8 +223,6 @@
                     <span>→</span>
                 </a>
 
-                </a>
-
                 <a href="minha-conta.html">
                     <span>Minha conta</span>
                     <span>→</span>
@@ -262,16 +260,16 @@
                 </p>
 
                 <h1 id="hero-title">
-                    Brasília
+                    Brasília,
                     <br>
 
                     seu
-                    <em>caminho.</em>
+                    <em>caminho,</em>
 
                     <br>
 
                     sua
-                    <span>cidade.</span>
+                    <span>cidade!</span>
                 </h1>
 
                 <p class="hero-copy">
@@ -443,9 +441,192 @@
             <button class="explore-modal-close" type="button" aria-label="Fechar categoria">×</button>
         </header>
 
-        <div class="explore-modal-filters" id="explore-modal-filters"></div>
+        <!-- Filtros ilustrativos -->
+        <div class="modal-filters">
 
-        <div class="explore-places-grid" id="explore-places-grid"></div>
+            <button type="button" class="filter-button active">
+                Todos
+            </button>
+
+            <button type="button" class="filter-button">
+                Restaurantes
+            </button>
+
+            <button type="button" class="filter-button">
+                Cafés
+            </button>
+
+            <button type="button" class="filter-button">
+                Bares
+            </button>
+
+            <button type="button" class="filter-button">
+                Comida regional
+            </button>
+
+        </div>
+
+        <!-- Lista de lugares -->
+        <div class="gastronomia-grid">
+
+            <!-- Primeiro lugar -->
+            <article class="gastronomia-card">
+
+                <div class="gastronomia-image">
+
+                    <img
+                        src="./assets/restaurante-1.jpg"
+                        alt="Restaurante em Brasília"
+                    >
+
+                    <button
+                        class="favorite-button"
+                        type="button"
+                        aria-label="Adicionar restaurante aos favoritos"
+                    >
+                        ♡
+                    </button>
+
+                    <span class="place-category">
+                        Restaurante
+                    </span>
+
+                </div>
+
+                <div class="gastronomia-content">
+
+                    <p class="place-region">
+                        Asa Sul
+                    </p>
+
+                    <h3>
+                        Sabores de Brasília
+                    </h3>
+
+                    <p>
+                        Cozinha brasileira contemporânea em um ambiente
+                        inspirado na arquitetura da capital.
+                    </p>
+
+                    <div class="place-footer">
+
+                        <span>$$</span>
+
+                        <a href="#mapa">
+                            Conhecer →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Segundo lugar -->
+            <article class="gastronomia-card">
+
+                <div class="gastronomia-image">
+
+                    <img
+                        src="./assets/restaurante-2.jpg"
+                        alt="Café localizado em Brasília"
+                    >
+
+                    <button
+                        class="favorite-button"
+                        type="button"
+                        aria-label="Adicionar café aos favoritos"
+                    >
+                        ♡
+                    </button>
+
+                    <span class="place-category">
+                        Café
+                    </span>
+
+                </div>
+
+                <div class="gastronomia-content">
+
+                    <p class="place-region">
+                        Asa Norte
+                    </p>
+
+                    <h3>
+                        Café do Cerrado
+                    </h3>
+
+                    <p>
+                        Cafés especiais, confeitaria artesanal e um espaço
+                        tranquilo para aproveitar a cidade.
+                    </p>
+
+                    <div class="place-footer">
+
+                        <span>$</span>
+
+                        <a href="#mapa">
+                            Conhecer →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Terceiro lugar -->
+            <article class="gastronomia-card">
+
+                <div class="gastronomia-image">
+
+                    <img
+                        src="./assets/restaurante-3.jpg"
+                        alt="Restaurante próximo ao Lago Paranoá"
+                    >
+
+                    <button
+                        class="favorite-button"
+                        type="button"
+                        aria-label="Adicionar restaurante aos favoritos"
+                    >
+                        ♡
+                    </button>
+
+                    <span class="place-category">
+                        Experiência
+                    </span>
+
+                </div>
+
+                <div class="gastronomia-content">
+
+                    <p class="place-region">
+                        Lago Sul
+                    </p>
+
+                    <h3>
+                        Mesa do Lago
+                    </h3>
+
+                    <p>
+                        Gastronomia, natureza e uma vista privilegiada
+                        para o pôr do sol no Lago Paranoá.
+                    </p>
+
+                    <div class="place-footer">
+
+                        <span>$$$</span>
+
+                        <a href="#mapa">
+                            Conhecer →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
 
         <div class="explore-modal-bottom">
             <p>Conhece outro lugar especial?</p>
@@ -453,9 +634,8 @@
         </div>
     </div>
 </div>
-
-<!-- EXPERIÊNCIAS -->
-<section class="section experiences" id="experiencias">
+        <!-- EXPERIÊNCIAS -->
+        <section class="section experiences" id="experiencias">
 
     <div class="section-heading reveal">
         <div>
